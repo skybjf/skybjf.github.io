@@ -1,15 +1,16 @@
 # Site settings
-title: Hux Blog 
+title: 只言片语 
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
-description: "一生想做浪漫极客。@Hux黄玄的博客主页、个人网站, 知乎@黄玄／阿里@鬼栈／Front-End／UX Unicorn／Web &amp; Mobile Lover／Motion Design "
+email: skybjf@126.com
+keywords: 小久哥,只言片语,前端,前端工程师,前端程序员,程序猿,攻城狮,程序员,工程师,css,javascript,学习笔记,小久哥博客
+description: "这是一个前端小菜鸟的博客~记录有关前端的一些小知识，学习笔记2015-7-23刚刚开通，还有很多不完善的地方需要一步步完善。"
 baseurl: ""
-url: "http://huxpro.github.io"
-twitter_username: huxpro
-github_username:  huxpro
-facebook_username:  huxpro
-weibo_username: huxpro
-zhihu_username: huxpro
+url: "http://skybjf.github.io"
+twitter_username: 陶远芝
+github_username:  skybjf
+facebook_username:  陶远芝
+weibo_username: 很久很从前
+zhihu_username: 小久哥
 
 # Build settings
 markdown: kramdown 
@@ -27,3 +28,7 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 kramdown:
   input: GFM
+
+author : 
+  name : 小久哥
+  email : skybjf@126.com
