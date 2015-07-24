@@ -8,9 +8,9 @@ baseurl: ""
 url: "http://skybjf.github.io"
 twitter_username: 陶远芝
 github_username:  skybjf
-facebook_username:  陶远芝
-weibo_username: 很久很从前
-zhihu_username: 小久哥
+facebook_username:  skybjf
+weibo_username: formerly0429
+zhihu_username: xiao-jiu-ge-1
 
 # Build settings
 markdown: kramdown 
