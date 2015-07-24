@@ -19,6 +19,13 @@
                     <a href="{{ site.baseurl }}/">Home</a>
                 </li>
                 {% for page in site.pages %}
+                    {% if page.title%}
+                        <li >
+                            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                        </li>
+                    {%endif%}
+                {% endfor %}
+<!--                 {% for page in site.pages %}
                     {% if page.title == page.url %}
                         <li class="active">
                             <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
@@ -28,7 +35,7 @@
                             <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                         </li>
                     {% endif %}
-                {% endfor %}
+                {% endfor %} -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
