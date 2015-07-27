@@ -2,7 +2,7 @@
 title: 只言片语 
 header-img: img/home-bg.jpg
 email: skybjf@126.com
-keywords: 小久哥,只言片语,前端,前端工程师,前端程序员,程序猿,攻城狮,程序员,工程师,css,javascript,学习笔记,小久哥博客
+keywords: 小久哥,小久哥博客,只言片语,前端,前端工程师,前端程序员,程序猿,攻城狮,程序员,工程师,css,javascript,学习笔记,个人博客
 description: "这是一个前端小菜鸟的博客~记录有关前端的一些小知识，学习笔记2015-7-23刚刚开通，还有很多不完善的地方需要一步步完善。"
 baseurl: ""
 url: "http://skybjf.github.io"
@@ -20,7 +20,7 @@ markdown: kramdown
 
 highlighter: pygments
 permalink: pretty
-paginate: 20
+paginate: 9
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 # use Github Flavored Markdown !important
