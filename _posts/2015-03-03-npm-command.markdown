@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "npm指令"
-subtitle:   "初期常用的一些npm指令"
+subtitle:   "node初期常用的一些npm指令"
 date:       2015-03-03
 author:     "小久哥"
 header-img: "img/post-bg-npm.jpg"
@@ -24,6 +24,11 @@ tags:
 
 ***
 
-更多有关于npm的信息 参考  https://docs.npmjs.com/
+额外说明：
+*1. 本地安装和全局安装，两种安装方法安装的位置不一样，如果想方便一些的话可以都采用全局安装，没有什么问题。
+*2. 虽然不是处女座……还是不喜欢有cache的存在，建议隔一段时间清理一下cache
+
+更多有关npm的信息,请参考:
+
 * [npmjs.com](http://npmjs.com/){:target="_blank"} (各种可以安装的插件都在里面)
 * [npm官方文档](https://docs.npmjs.com/){:target="_blank"} 
