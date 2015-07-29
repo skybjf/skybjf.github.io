@@ -33,7 +33,7 @@
                 {% endfor %} -->
                 {% assign flag = page.url | remove:'/'%}
                 {% for page in site.pages %}
-                    {% if page.title == flag %}
+                    {% if page.title | downcase == flag %}
                         <li class="active">
                             <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                         </li>
