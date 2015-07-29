@@ -31,8 +31,9 @@
                         </li>
                     {%endif%}
                 {% endfor %} -->
+                {% assign flag = page.url | remove:'/'%}
                 {% for page in site.pages %}
-                    {% if page.title == page.url | remove:'/' %}
+                    {% if page.title == flag %}
                         <li class="active">
                             <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                         </li>
