@@ -24,16 +24,11 @@
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
                 {% endif %}
-<!--                 {% for page in site.pages %}
-                    {% if page.title%}
-                        <li >
-                            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                        </li>
-                    {%endif%}
-                {% endfor %} -->
-                {% assign flag = page.url | remove:'/'%}
+                {% assign flag = page.url | remove:'/' %}
+                {% assign pagetitle = page.title | downcase %}
+
                 {% for page in site.pages %}
-                    {% if page.title | downcase == flag %}
+                    {% if pagetitle == flag %}
                         <li class="active">
                             <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                         </li>
@@ -48,5 +43,7 @@
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
+    <script type="text/javascript">
+        console.log('flag:{{ flag }} ;'+'pagetitle:{{ pagetitle }} ;'+'page.title:{{ page.title }};');
+    </script>
 </nav>
-<div>{{ flag }}</div>
