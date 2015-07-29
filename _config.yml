@@ -6,11 +6,11 @@ keywords: 小久哥,小久哥博客,只言片语,前端,前端工程师,前端�
 description: "这是一个前端小菜鸟的博客~记录有关前端的一些小知识，学习笔记2015-7-23刚刚开通，还有很多不完善的地方需要一步步完善。"
 baseurl: ""
 url: "http://skybjf.github.io"
-twitter_username: 陶远芝
+twitter_username: 
 github_username:  skybjf
 facebook_username:  skybjf
 weibo_username: formerly0429
-zhihu_username: xiao-jiu-ge-1
+zhihu_username: skybjf
 
 # Build settings
 markdown: kramdown 
