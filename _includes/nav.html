@@ -15,7 +15,17 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                {% if page.url == '/' %}
+                    {% assign pages_list = site.pages %}  
+                    {% for node in pages_list %}
+                        {% if node.title != null %}
+                            {% if page.url == node.url %}
+                                <li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
+                            {% else %}
+                                <li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+<!--                 {% if page.url == '/' %}
                     <li class="active">
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
@@ -30,34 +40,17 @@
                     <li>
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
-
-  {% assign pages_list = site.pages %}  
-  {% for node in pages_list %}
-    {% if node.title != null %}
-        {% if page.url == node.url %}
-        <li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
-        {% else %}
-        <li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
-        {% endif %}
-    {% endif %}
-  {% endfor %}
-
-<!--                     {% for page in site.pages %}
-                        {% if page.title%}
-                            {% assign flag = page.url | remove:'/' %}
-                            {% assign pagetitle = page.title | downcase %}
-                            {% if pagetitle == flag %}
-                                <li class="active">
-                                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                                </li>
+                    {% assign pages_list = site.pages %}  
+                    {% for node in pages_list %}
+                        {% if node.title != null %}
+                            {% if page.url == node.url %}
+                                <li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
                             {% else %}
-                                <li >
-                                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                                </li>
+                                <li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
                             {% endif %}
-                        {%endif%}
-                    {% endfor %} -->
-                {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %} -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
