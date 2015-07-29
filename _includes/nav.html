@@ -19,25 +19,33 @@
                     <li class="active">
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
+                    {% for page in site.pages %}
+                        {% if page.title%}
+                            <li >
+                                <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                            </li>
+                        {%endif%}
+                    {% endfor %}
                 {% else %}
                     <li>
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
+                    {% for page in site.pages %}
+                        {% if page.title%}
+                            {% assign flag = page.url | remove:'/' %}
+                            {% assign pagetitle = page.title | downcase %}
+                            {% if pagetitle == flag %}
+                                <li class="active">
+                                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                                </li>
+                            {% else %}
+                                <li >
+                                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                                </li>
+                            {% endif %}
+                        {%endif%}
+                    {% endfor %}
                 {% endif %}
-
-                {% for page in site.pages %}
-                    {% assign flag = page.url | remove:'/' %}
-                    {% assign pagetitle = page.title | downcase %}
-                    {% if pagetitle == flag %}
-                        <li class="active">
-                            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                        </li>
-                    {% else %}
-                        <li >
-                            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
