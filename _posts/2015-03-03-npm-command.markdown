@@ -4,7 +4,7 @@ title:      "npm指令"
 subtitle:   "node初期常用的一些npm指令"
 date:       2015-03-03
 author:     "小久哥"
-header-img: "img/post-bg-npm.jpg"
+header-img: "img/article/tpbg/npm.jpg"
 tags:
     - node
 ---
