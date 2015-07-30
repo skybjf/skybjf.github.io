@@ -1,0 +1,18 @@
+---
+layout:     post
+title:      "sublime的插件"
+subtitle:   "基于node.js搭建本地简易http-server"
+date:       2015-07-30
+author:     "小久哥"
+header-img: "img/article/tpbg/sublime.jpg"
+tags:
+    - sublime
+---
+
+>前端编辑神器sublime中一些有用的插件！
+
+:zero: package manager
+&nbsp;&nbsp;毫无疑问，必须第一个安装的插件
+
+:one: Emmet (zen coding)
+如果你能花点时间学习一下emmet的语法，编程的速度会快些
