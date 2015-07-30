@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "sublime的插件"
-subtitle:   "基于node.js搭建本地简易http-server"
+subtitle:   "sublime的插件，按照需要安装"
 date:       2015-07-30
 author:     "小久哥"
 header-img: "img/article/tpbg/sublime.jpg"
@@ -11,8 +11,23 @@ tags:
 
 >前端编辑神器sublime中一些有用的插件！
 
-:zero: package manager
+零、package manager
 &nbsp;&nbsp;毫无疑问，必须第一个安装的插件
 
-:one: Emmet (zen coding)
-如果你能花点时间学习一下emmet的语法，编程的速度会快些
+一、 Emmet (zen coding) 
+&nbsp;&nbsp;如果你能花点时间学习一下emmet的语法，编程的速度会快些
+
+二、 syncedSideBar 
+&nbsp;&nbsp;一个自动在左边slidebar里找到对应文件的插件
+
+三、 terminal
+&nbsp;&nbsp;按下ctrl + shift + t 打开cmd，并且自动进入当前编辑文件所在的根目录，结合node的http-server搭建本地服务器，必须棒棒哒 (node搭建本地服务器：[参考地址](http://skybjf.github.io/2015/04/07/node-http-server/){:target="_blank"} )
+
+四、 html-css-js-prettify
+&nbsp;&nbsp;一个赞赞的代码格式化工具。ctrl + shift + h
+
+五、 tortoiseSVN
+&nbsp;&nbsp;比较好用的svn插件，提交：`alt + c`，更新：`alt + u`
+
+
+>暂时提供这么多，等有比较好的插件再更新
