@@ -9,4 +9,35 @@ tags:
     - css
 ---
 
-我们经常使用的清除浮动的代码是
+我们经常使用的清除浮动的代码是:
+```
+	.clearfix:after {
+		content:"";
+		display:block;
+		height:0;
+		overflow:hidden;
+		clear:both;
+		visibility:hidden;
+	}
+```
+可是为什么要这么写呢？
+
+####很久以前的清除浮动
+```
+	<div class="p">
+	    <div class="c"></div>
+	    <div class="c"></div>
+	    <div class="c"></div>
+	    <div style="clear:left;"></div>
+	</div>
+```
+这样是有缺陷的，我们需要用一个空的div来清除浮动。方法虽然好使，但是得无端使用一个空标签，不推荐使用。
+
+####伪元素
+既然我们会有一个不需要真正存在的元素，那么为什么不使用伪元素。
+然后，就有了使用`:after`伪元素来实现清除浮动。
+
+
+
+
+伪类和伪元素是有差别。
