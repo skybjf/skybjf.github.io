@@ -10,27 +10,29 @@ tags:
 ---
 
 我们经常使用的清除浮动的代码是:
-```
-	.clearfix:after { </br>
-		content:"";</br>
-		display:block;</br>
-		height:0;</br>
-		overflow:hidden;</br>
-		clear:both;</br>
-		visibility:hidden;</br>
-	}
-```
+<pre>
+	<code>
+.clearfix:after { 
+	content:"";
+	display:block;
+	height:0;
+	overflow:hidden;
+	clear:both;
+	visibility:hidden;
+}
+	</code>
+</pre>
 可是为什么要这么写呢？
 
 #### 很久以前的清除浮动
 <pre>
 	<code>
-	&lt;div class="p"&gt;
-	    &lt;div class="c"&gt;&lt;/div&gt;
-	    &lt;div class="c"&gt;&lt;/div&gt;
-	    &lt;div class="c"&gt;&lt;/div&gt;
-	    &lt;div style="clear:left;"&gt;&lt;/div&gt;
-	&lt;/div&gt;
+&lt;div class="p"&gt;
+	&lt;div class="c"&gt;&lt;/div&gt;
+	&lt;div class="c"&gt;&lt;/div&gt;
+	&lt;div class="c"&gt;&lt;/div&gt;
+	&lt;div style="clear:left;"&gt;&lt;/div&gt;
+&lt;/div&gt;
 	</code>
 </pre>
 
@@ -51,17 +53,17 @@ tags:
 当我在看bootstrap的清除浮动时，第三版已经和第二版不一样了。
 <pre>
 	<code>
-	/* 不用兼容ie6/7的代码里···少了zoom:1，如果要使用，可以添加上 */
-		@mixin clearfix() {
-			&:before,
-			&:after {
-				content: " "; // 1
-				display: table; // 2
-			}
-			&:after {
-				clear: both;
-			}
-		}
+/* 不用兼容ie6/7的代码里···少了zoom:1，如果要使用，可以添加上 */
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
 	</code>
 </pre>
 我们来看，bootstrap写了什么？多了`:before`，还有`display`是`table`。
