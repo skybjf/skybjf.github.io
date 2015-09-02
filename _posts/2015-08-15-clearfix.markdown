@@ -36,7 +36,7 @@ tags:
 
 这样是有缺陷的，我们需要用一个空的div来清除浮动。方法虽然好使，但是得无端使用一个空标签，不推荐使用。
 
-#### 伪元素
+伪元素
 既然我们会有一个不需要真正存在的元素，那么为什么不使用伪元素。
 然后，就有了使用`:after`伪元素来实现清除浮动。
 
@@ -46,3 +46,55 @@ tags:
 
 伪元素是：
 ![img](/img/article/insert/20150815/weiyuansu.png)
+
+#### 新版清楚浮动
+当我在看bootstrap的清除浮动时，第三版已经和第二版不一样了。
+<pre>
+	<code>
+	/* 不用兼容ie6/7的代码里···少了zoom:1，如果要使用，可以添加上 */
+		@mixin clearfix() {
+			&:before,
+			&:after {
+				content: " "; // 1
+				display: table; // 2
+			}
+			&:after {
+				clear: both;
+			}
+		}
+	</code>
+</pre>
+我们来看，bootstrap写了什么？多了`:before`，还有`display`是`table`。
+bootstrap在这个文件中的注释有解释
+
+> Clearfix
+>
+> For modern browsers
+> 1. The space content is one way to avoid an Opera bug when the
+>    contenteditable attribute is included anywhere else in the document.
+>    Otherwise it causes space to appear at the top and bottom of elements
+>    that are clearfixed.
+> 2. The use of `table` rather than `block` is only necessary if using
+>    `:before` to contain the top-margins of child elements.
+>
+> Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+我大致翻译下：
+> clearfix
+>
+> 对于现代的浏览器
+> 1、文档中任何结点如果包含了`contenteditable`属性时，使用空格占位符是避免Opera浏览器中bug的一个方法。否则，会导致在这个结点上部和下部都会出现空格。
+> 2、如果使用 `:before` 让子元素拥有上边距的话，使用 `table` 远比使用 `block` 更为必要。
+>
+> 参考连接：http://nicolasgallagher.com/micro-clearfix-hack/(http://nicolasgallagher.com/micro-clearfix-hack/){:target="_blank"}
+
+
+
+
+
+
+
+
+
+
+
