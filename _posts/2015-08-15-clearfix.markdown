@@ -25,12 +25,12 @@ tags:
 #### 很久以前的清除浮动
 <pre>
 	<code>
-	<div class="p">
-	    <div class="c"></div>
-	    <div class="c"></div>
-	    <div class="c"></div>
-	    <div style="clear:left;"></div>
-	</div>
+	&lt;div class="p"&gt;
+	    &lt;div class="c"&gt;&lt;/div&gt;
+	    &lt;div class="c"&gt;&lt;/div&gt;
+	    &lt;div class="c"&gt;&lt;/div&gt;
+	    &lt;div style="clear:left;"&gt;&lt;/div&gt;
+	&lt;/div&gt;
 	</code>
 </pre>
 
@@ -42,10 +42,10 @@ tags:
 
 伪类和伪元素是有差别。
 伪类有：
-![img](/img/article/insert/20150815/weilei.png)
+![img](/img/article/insert/20150815/weilei.jpg)
 
 伪元素是：
-![img](/img/article/insert/20150815/weiyuansu.png)
+![img](/img/article/insert/20150815/weiyuansu.jpg)
 
 #### 新版清楚浮动
 当我在看bootstrap的清除浮动时，第三版已经和第二版不一样了。
@@ -71,7 +71,7 @@ bootstrap在这个文件中的注释有解释
 >
 > For modern browsers
 > 1. The space content is one way to avoid an Opera bug when the
->    contenteditable attribute is included anywhere else in the document.
+>    `contenteditable` attribute is included anywhere else in the document.
 >    Otherwise it causes space to appear at the top and bottom of elements
 >    that are clearfixed.
 > 2. The use of `table` rather than `block` is only necessary if using
@@ -83,7 +83,7 @@ bootstrap在这个文件中的注释有解释
 > clearfix
 >
 > 对于现代的浏览器
-> 1、文档中任何结点如果包含了`contenteditable`属性时，使用空格占位符是避免Opera浏览器中bug的一个方法。否则，会导致在这个结点上部和下部都会出现空格。
+> 1、文档中任何结点如果包含了 `contenteditable` 属性时，使用空格占位符是避免Opera浏览器中bug的一个方法。否则，会导致在这个结点上部和下部都会出现空格。
 > 2、如果使用 `:before` 让子元素拥有上边距的话，使用 `table` 远比使用 `block` 更为必要。
 >
 > 参考连接：http://nicolasgallagher.com/micro-clearfix-hack/(http://nicolasgallagher.com/micro-clearfix-hack/){:target="_blank"}
