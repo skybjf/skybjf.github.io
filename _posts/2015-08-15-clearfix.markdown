@@ -11,13 +11,13 @@ tags:
 
 我们经常使用的清除浮动的代码是:
 ```
-	.clearfix:after {
-		content:"";
-		display:block;
-		height:0;
-		overflow:hidden;
-		clear:both;
-		visibility:hidden;
+	.clearfix:after { </br>
+		content:"";</br>
+		display:block;</br>
+		height:0;</br>
+		overflow:hidden;</br>
+		clear:both;</br>
+		visibility:hidden;</br>
 	}
 ```
 可是为什么要这么写呢？
@@ -80,13 +80,14 @@ bootstrap在这个文件中的注释有解释
 > Source: http://nicolasgallagher.com/micro-clearfix-hack/
 
 我大致翻译下：
+
 > clearfix
 >
 > 对于现代的浏览器
 > 1、文档中任何结点如果包含了 `contenteditable` 属性时，使用空格占位符是避免Opera浏览器中bug的一个方法。否则，会导致在这个结点上部和下部都会出现空格。
 > 2、如果使用 `:before` 让子元素拥有上边距的话，使用 `table` 远比使用 `block` 更为必要。
 >
-> 参考连接：http://nicolasgallagher.com/micro-clearfix-hack/(http://nicolasgallagher.com/micro-clearfix-hack/){:target="_blank"}
+> 参考连接：[http://nicolasgallagher.com/micro-clearfix-hack/](http://nicolasgallagher.com/micro-clearfix-hack/){:target="_blank"}
 
 
 
