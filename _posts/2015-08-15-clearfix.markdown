@@ -110,21 +110,23 @@ bootstrap在这个文件中的注释有解释
 * 浮动元素，即float:left &brvbar; right
 * 绝对定位元素，即position:absolute &brvbar; fixed
 * 块容器【block containers】(比如inline-blocks，table-cells和table-captions)，这些块容器有个特征就是它们不是块级盒子【block boxes】。即display:table-cell &brvbar; table-caption &brvbar; inline-block
-* 设置了除visible外的overflow值的块盒子【blok boxes】，即overflow:hidden &brvbar; scroll &brvbar; auto
+* 设置了除visible外的overflow值的块盒子【block boxes】，即overflow:hidden &brvbar; scroll &brvbar; auto
 
 BFC特性：
 
-* 创建了BFC的元素中，子浮动元素也会参与高度计算 ^{补充[1]}。
+* 创建了BFC的元素中，子浮动元素也会参与高度计算^{补充[1]}。
 * 与浮动元素相邻的、创建了BFC的元素，都不能与浮动元素相互覆盖
 * 创建了BFC的元素不会与它们的子元素margin重叠
 
-好了，现在所有的问题都可以解释了，`:before`是为了在之前生成一个 `display`为 `table` 的虚拟元素，这个虚拟 `table` 会生成一个匿名 `display:table-cell` ^{补充[2]} ，从而块级化上下文，这样就实现了包含子元素上边距的问题，同时也清除了浮动。
+好了，现在所有的问题都可以解释了，`:before`是为了在之前生成一个 `display`为 `table` 的虚拟元素，这个虚拟 `table` 会生成一个匿名 `display:table-cell`^{补充[2]} ，从而块级化上下文，这样就实现了包含子元素上边距的问题，同时也清除了浮动。
 
 补充：
-	* 1.个人理解那句话的意思，也就是清除了浮动，或者说叫，包含浮动。父级如果是一个BFC的话也就可以包含浮动了，这就是为什么父级设置 `overflow:hidden` 或者 `display:inline-block` 等等可以包含浮动了。但是和清除浮动的差别，视觉上最直观的就是宽度问题，清除浮动之后的宽度是100%，BFC包含浮动的宽度，不一定是100%了。
-	* 2.关于为什么会生成一个匿名 `table-cell` 。我也不知道，官方就是这么定义的，在W3C官网中 [Anonymous table objects](http://www.w3.org/TR/CSS2/tables.html#anonymous-boxes){:target="_blank"} 一段中，关于table对象是这么说：按照css2.1的table模型，文本语言或者HTML中可能没有包含所有的属性，在这些情况下，为了让 `table` 模型正常工作这些“遗漏”的元素必须被定义。任何一个 `table` 元素将会在它里面自动定义一些有用的匿名 `table` ，至少由三层组成，相当于 `table &brvbar; inline-table` `table-row` `table-cell` 三层。
+
+* 1.个人理解那句话的意思，也就是清除了浮动，或者说叫，包含浮动。父级如果是一个BFC的话也就可以包含浮动了，这就是为什么父级设置 `overflow:hidden` 或者 `display:inline-block` 等等可以包含浮动了。但是和清除浮动的差别，视觉上最直观的就是宽度问题，清除浮动之后的宽度是100%，BFC包含浮动的宽度，不一定是100%了。
+* 2.关于为什么会生成一个匿名 `table-cell` 。我也不知道，官方就是这么定义的，在W3C官网中 [Anonymous table objects](http://www.w3.org/TR/CSS2/tables.html#anonymous-boxes){:target="_blank"} 一段中，关于table对象是这么说：按照css2.1的table模型，文本语言或者HTML中可能没有包含所有的属性，在这些情况下，为了让 `table` 模型正常工作这些“遗漏”的元素必须被定义。任何一个 `table` 元素将会在它里面自动定义一些有用的匿名 `table` ，至少由三层组成，相当于 `table &brvbar; inline-table` `table-row` `table-cell` 三层。
 
 参考文献：
+
 * [浮动从何而来 我们为何要清除浮动 清除浮动的原理是什么](http://www.jb51.net/css/67471.html){:target="_blank"}
 * [BFC的定义 (W3C官方定义)](http://www.w3.org/TR/CSS21/visuren.html#block-formatting){:target="_blank"}
 * [精简版清除浮动作者说明](http://nicolasgallagher.com/micro-clearfix-hack/){:target="_blank"}
