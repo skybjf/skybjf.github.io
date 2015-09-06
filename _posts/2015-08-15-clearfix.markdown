@@ -33,7 +33,7 @@ tags:
   &lt;div class="c"&gt;&lt;/div&gt;
   &lt;div class="c"&gt;&lt;/div&gt;
   &lt;div class="c"&gt;&lt;/div&gt;
-  &lt;div style="clear:left;"&gt;&lt;/div&gt;
+  &lt;div style="clear:both;"&gt;&lt;/div&gt;
 &lt;/div&gt;
 	</code>
 </pre>
@@ -51,8 +51,8 @@ tags:
 伪元素是：
 ![img](/img/article/insert/20150815/weiyuansu.jpg)
 
-#### 新版清楚浮动
-当我在看bootstrap的清除浮动时，第三版已经和第二版不一样了。
+#### 新版清除浮动
+当我在看bootstrap的清除浮动时，第三版已经和第二版不一样了。(sass代码)
 <pre>
 	<code>
 /* 不用兼容ie6/7的代码里···少了zoom:1，如果要使用，可以添加上 */
