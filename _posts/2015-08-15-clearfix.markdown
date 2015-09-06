@@ -114,11 +114,11 @@ bootstrap在这个文件中的注释有解释
 
 BFC特性：
 
-* 创建了BFC的元素中，子浮动元素也会参与高度计算 _{补充[1]} ^{补充[1]} ^ {补充[1]} ^{ 补充[1] }。
+* 创建了BFC的元素中，子浮动元素也会参与高度计算 (补充[1])。
 * 与浮动元素相邻的、创建了BFC的元素，都不能与浮动元素相互覆盖
 * 创建了BFC的元素不会与它们的子元素margin重叠
 
-好了，现在所有的问题都可以解释了，`:before`是为了在之前生成一个 `display`为 `table` 的虚拟元素，这个虚拟 `table` 会生成一个匿名 `display:table-cell`_{补充[2]} ，从而块级化上下文，这样就实现了包含子元素上边距的问题，同时也清除了浮动。
+好了，现在所有的问题都可以解释了，`:before`是为了在之前生成一个 `display`为 `table` 的虚拟元素，这个虚拟 `table` 会生成一个匿名 `display:table-cell` (补充[2]) ，从而块级化上下文，这样就实现了包含子元素上边距的问题，同时也清除了浮动。
 
 补充：
 
@@ -130,4 +130,4 @@ BFC特性：
 * [浮动从何而来 我们为何要清除浮动 清除浮动的原理是什么](http://www.jb51.net/css/67471.html){:target="_blank"}
 * [BFC的定义 (W3C官方定义)](http://www.w3.org/TR/CSS21/visuren.html#block-formatting){:target="_blank"}
 * [精简版清除浮动作者说明](http://nicolasgallagher.com/micro-clearfix-hack/){:target="_blank"}
-
+* [学习块格式化上下文（BlockFormattingContext）](http://www.cnblogs.com/elcarim5efil/p/4745796.html){:target="_blank"}
