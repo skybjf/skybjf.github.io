@@ -97,6 +97,14 @@ bootstrap在这个文件中的注释有解释
 
 ##### “Block Formatting Context” 块级格式化上下文
 
+* 安装模块：npm install xxx
+* 安装模块到全局：npm install xxx -g
+* 查看已安装的模块：npm ls
+* 查看已安装到全局的模块：npm ls -g
+* 卸载模块：npm uninstall xxx (-g)
+* 清理缓存：npm cache clean
+
+
 [BFC的定义 (W3C官方定义)](http://www.w3.org/TR/CSS21/visuren.html#block-formatting){:target="_blank"}
 是 W3C CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。
 在创建了 Block Formatting Context 的元素中，其子元素会一个接一个地放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻的元素之间的垂直距离取决于 ‘margin’ 特性。在 Block Formatting Context 中相邻的块级元素的垂直边距会折叠（collapse）。
@@ -105,10 +113,10 @@ bootstrap在这个文件中的注释有解释
 
 什么样的元素会为其内容生成一个BFC呢？
 
-* 浮动元素，即float:left|right
-* 绝对定位元素，即position:absolute|fixed
-* 块容器【block containers】(比如inline-blocks，table-cells和table-captions)，这些块容器有个特征就是它们不是块级盒子【block boxes】。即display:table-cell|table-caption|inline-block
-* 设置了除visible外的overflow值的块盒子【blok boxes】，即overflow:hidden|scroll|auto
+* 浮动元素，即float:left &brvbar; right
+* 绝对定位元素，即position:absolute &brvbar; fixed
+* 块容器【block containers】(比如inline-blocks，table-cells和table-captions)，这些块容器有个特征就是它们不是块级盒子【block boxes】。即display:table-cell &brvbar; table-caption &brvbar; inline-block
+* 设置了除visible外的overflow值的块盒子【blok boxes】，即overflow:hidden &brvbar; scroll &brvbar; auto
 
 BFC特性：
 
@@ -122,12 +130,9 @@ BFC特性：
 补充说明：
 	* 1.个人理解那句话的意思，也就是清除了浮动，或者说叫，包含了浮动。父级如果是一个BFC的话也就可以包含浮动了，这就是为什么父级设置 `overflow:hidden` 或者 `display:inline-block` 等等可以包含浮动了
 
-***
 
 参考文献：
 * [浮动从何而来 我们为何要清除浮动 清除浮动的原理是什么](http://www.jb51.net/css/67471.html){:target="_blank"}
 * [BFC的定义 (W3C官方定义)](http://www.w3.org/TR/CSS21/visuren.html#block-formatting){:target="_blank"}
 * [精简版清除浮动作者说明](http://nicolasgallagher.com/micro-clearfix-hack/){:target="_blank"}
-
-***
 
