@@ -9,16 +9,18 @@ tags:
     - css
 ---
 
+> 本文所有的外文翻译都是小久哥自己翻译的，如果你觉得不准确或者想看原文，请点击相关链接。
+
 我们经常使用的清除浮动的代码是:
 <pre>
 	<code>
 .clearfix:after { 
-	content:"";
-	display:block;
-	height:0;
-	overflow:hidden;
-	clear:both;
-	visibility:hidden;
+  content:"";
+  display:block;
+  height:0;
+  overflow:hidden;
+  clear:both;
+  visibility:hidden;
 }
 	</code>
 </pre>
@@ -28,10 +30,10 @@ tags:
 <pre>
 	<code>
 &lt;div class="p"&gt;
-	&lt;div class="c"&gt;&lt;/div&gt;
-	&lt;div class="c"&gt;&lt;/div&gt;
-	&lt;div class="c"&gt;&lt;/div&gt;
-	&lt;div style="clear:left;"&gt;&lt;/div&gt;
+  &lt;div class="c"&gt;&lt;/div&gt;
+  &lt;div class="c"&gt;&lt;/div&gt;
+  &lt;div class="c"&gt;&lt;/div&gt;
+  &lt;div style="clear:left;"&gt;&lt;/div&gt;
 &lt;/div&gt;
 	</code>
 </pre>
@@ -55,14 +57,14 @@ tags:
 	<code>
 /* 不用兼容ie6/7的代码里···少了zoom:1，如果要使用，可以添加上 */
 @mixin clearfix() {
-	&:before,
-	&:after {
-		content: " "; // 1
-		display: table; // 2
-	}
-	&:after {
-		clear: both;
-	}
+  &:before,
+  &:after {
+	content: " "; // 1
+	display: table; // 2
+  }
+  &:after {
+	clear: both;
+  }
 }
 	</code>
 </pre>
@@ -97,14 +99,6 @@ bootstrap在这个文件中的注释有解释
 
 ##### “Block Formatting Context” 块级格式化上下文
 
-* 安装模块：npm install xxx
-* 安装模块到全局：npm install xxx -g
-* 查看已安装的模块：npm ls
-* 查看已安装到全局的模块：npm ls -g
-* 卸载模块：npm uninstall xxx (-g)
-* 清理缓存：npm cache clean
-
-
 [BFC的定义 (W3C官方定义)](http://www.w3.org/TR/CSS21/visuren.html#block-formatting){:target="_blank"}
 是 W3C CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。
 在创建了 Block Formatting Context 的元素中，其子元素会一个接一个地放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻的元素之间的垂直距离取决于 ‘margin’ 特性。在 Block Formatting Context 中相邻的块级元素的垂直边距会折叠（collapse）。
@@ -120,16 +114,15 @@ bootstrap在这个文件中的注释有解释
 
 BFC特性：
 
-* 创建了BFC的元素中，子浮动元素也会参与高度计算(见补充说明1.)
+* 创建了BFC的元素中，子浮动元素也会参与高度计算 ^{补充[1]}。
 * 与浮动元素相邻的、创建了BFC的元素，都不能与浮动元素相互覆盖
 * 创建了BFC的元素不会与它们的子元素margin重叠
 
+好了，现在所有的问题都可以解释了，`:before`是为了在之前生成一个 `display`为 `table` 的虚拟元素，这个虚拟 `table` 会生成一个匿名 `display:table-cell` ^{补充[2]} ，从而块级化上下文，这样就实现了包含子元素上边距的问题，同时也清除了浮动。
 
-好了，现在所有的问题都可以解释了，`:before`是为了在之前生成一个 `display`为 `table` 的虚拟元素，它会生成一个隐匿的 `display:table-cell` 从而块级化上下文，这样就实现了包含子元素上边距的问题，同时也清除了浮动。
-
-补充说明：
-	* 1.个人理解那句话的意思，也就是清除了浮动，或者说叫，包含了浮动。父级如果是一个BFC的话也就可以包含浮动了，这就是为什么父级设置 `overflow:hidden` 或者 `display:inline-block` 等等可以包含浮动了
-
+补充：
+	* 1.个人理解那句话的意思，也就是清除了浮动，或者说叫，包含浮动。父级如果是一个BFC的话也就可以包含浮动了，这就是为什么父级设置 `overflow:hidden` 或者 `display:inline-block` 等等可以包含浮动了。但是和清除浮动的差别，视觉上最直观的就是宽度问题，清除浮动之后的宽度是100%，BFC包含浮动的宽度，不一定是100%了。
+	* 2.关于为什么会生成一个匿名 `table-cell` 。我也不知道，官方就是这么定义的，在W3C官网中 [Anonymous table objects](http://www.w3.org/TR/CSS2/tables.html#anonymous-boxes){:target="_blank"} 一段中，关于table对象是这么说：按照css2.1的table模型，文本语言或者HTML中可能没有包含所有的属性，在这些情况下，为了让 `table` 模型正常工作这些“遗漏”的元素必须被定义。任何一个 `table` 元素将会在它里面自动定义一些有用的匿名 `table` ，至少由三层组成，相当于 `table &brvbar; inline-table` `table-row` `table-cell` 三层。
 
 参考文献：
 * [浮动从何而来 我们为何要清除浮动 清除浮动的原理是什么](http://www.jb51.net/css/67471.html){:target="_blank"}
