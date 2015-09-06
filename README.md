@@ -1,27 +1,12 @@
-#Hux Blog 
+# 小久哥博客 
 
-###[View Live Hux Blog &rarr;](http://huxpro.github.io)
+### [只言片语](http://huxpro.gihttp://skybjf.github.io/)
 
-![](http://pic3.zhimg.com/4b3c678f7c23067a1975bbc20f6711ea_b.jpg)
+### 添加功能 (Support)
 
+已经加入多说评论功能，添加了百度检测和谷歌分析。
+如有疑问请开issue。
 
-### Feature
-
-- Full-feature **tag** support
-- UX optimize for mobile used (bunch of `webkit-vender-something`)
-- Typographic optimize for Chinese (font-family, size, weight..)
-- Network optimze for Chinese environment (drop webfont, local CDN)
-- Using Github Flavored Markdown
-- Use duoshuo as the disqus-like third party discussion system
-- Use Baidu, Tencent analyze
-
-### Support
-
-- Expect Star when forked
-- Any problem, just open an issue here
-
-
-
-### Thanks
+### 感谢 (Thanks)
 
 Forked from [IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)
