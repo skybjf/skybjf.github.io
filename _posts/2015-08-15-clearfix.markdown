@@ -103,8 +103,6 @@ bootstrap在这个文件中的注释有解释
 
 在 Block Formatting Context 中，每一个元素左外边与包含块的左边相接触（对于从右到左的格式化，右外边接触右边）， 即使存在浮动也是如此（尽管一个元素的内容区域会由于浮动而压缩），除非这个元素也创建了一个新的 Block Formatting Context 。
 
-***
-
 什么样的元素会为其内容生成一个BFC呢？
 
 * 浮动元素，即float:left|right
@@ -112,14 +110,12 @@ bootstrap在这个文件中的注释有解释
 * 块容器【block containers】(比如inline-blocks，table-cells和table-captions)，这些块容器有个特征就是它们不是块级盒子【block boxes】。即display:table-cell|table-caption|inline-block
 * 设置了除visible外的overflow值的块盒子【blok boxes】，即overflow:hidden|scroll|auto
 
-***
-
 BFC特性：
-***
+
 * 创建了BFC的元素中，子浮动元素也会参与高度计算(见补充说明1.)
 * 与浮动元素相邻的、创建了BFC的元素，都不能与浮动元素相互覆盖
 * 创建了BFC的元素不会与它们的子元素margin重叠
-***
+
 
 好了，现在所有的问题都可以解释了，`:before`是为了在之前生成一个 `display`为 `table` 的虚拟元素，它会生成一个隐匿的 `display:table-cell` 从而块级化上下文，这样就实现了包含子元素上边距的问题，同时也清除了浮动。
 
@@ -127,9 +123,11 @@ BFC特性：
 	* 1.个人理解那句话的意思，也就是清除了浮动，或者说叫，包含了浮动。父级如果是一个BFC的话也就可以包含浮动了，这就是为什么父级设置 `overflow:hidden` 或者 `display:inline-block` 等等可以包含浮动了
 
 ***
+
 参考文献：
 * [浮动从何而来 我们为何要清除浮动 清除浮动的原理是什么](http://www.jb51.net/css/67471.html){:target="_blank"}
 * [BFC的定义 (W3C官方定义)](http://www.w3.org/TR/CSS21/visuren.html#block-formatting){:target="_blank"}
 * [精简版清除浮动作者说明](http://nicolasgallagher.com/micro-clearfix-hack/){:target="_blank"}
+
 ***
 
