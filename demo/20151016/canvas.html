@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>玉帝</title>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+    <button class="stop">slow</button>
+    <button class="goon">quik</button>
+<script type="text/javascript">
+	(function() {
+	    var lastTime = 0;
+	    var vendors = ['ms', 'moz', 'webkit', 'o'];
+	    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+	        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+	        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+	    };
+	    if (!window.requestAnimationFrame){
+	        window.requestAnimationFrame = function(callback, element) {
+	            var currTime = new Date().getTime();
+	            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+	            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
+	            lastTime = currTime + timeToCall;
+	            return id;
+	        };
+	    };
+	    if (!window.cancelAnimationFrame){
+	        window.cancelAnimationFrame = function(id) {
+	            clearTimeout(id);
+	        };
+	    };
+	}());
+
+	(function () {
+		var flash, coinImage, canvas;
+		// 为了下面可以清除循环定义
+		var loopname;
+		// 循环
+		function loop(){
+			loopname=window.requestAnimationFrame(loop);
+			flash.update();
+			flash.render();
+		}
+		// 取消循环
+		function cancelloop(){
+			window.cancelAnimationFrame(loopname);
+		};
+
+		// 初始化canvas
+		function init(){
+			flash.render();
+		}
+
+		// 
+		function sprite (options) {
+			var that = {},
+			// 首帧位置
+				frameIndex = 0,
+			// 播放第几帧
+				tickCount = 0,
+			// 每秒播放帧数
+				ticksPerFrame = options.ticksPerFrame || 0,
+			// 总帧数字
+				numberOfFrames = options.numberOfFrames || 1;
+			
+			that.context = options.context;
+			that.width = options.width;
+			that.height = options.height;
+			that.image = options.image;
+			
+			that.update = function () {
+	            tickCount += 1;
+	            if (tickCount > ticksPerFrame) {
+					tickCount = 0;
+	                // If the current frame index is in range
+	                if (frameIndex < numberOfFrames - 1) {	
+	                    // Go to the next frame
+	                    frameIndex += 1;
+	                } else {
+	                    frameIndex = 0;
+	                }
+	            }
+	        };
+			
+			that.clear=function(){
+				// Clear the canvas
+				that.context.clearRect(0, 0, that.width, that.height);
+			};
+
+			that.render = function () {
+				// Clear the canvas
+				that.context.clearRect(0, 0, that.width, that.height);
+				// Draw the animation
+				that.context.drawImage(
+					that.image,
+					frameIndex * that.width / numberOfFrames,
+					0,
+					that.width / numberOfFrames,
+					that.height,
+					0,
+					0,
+					that.width / numberOfFrames,
+					that.height
+				);
+			};
+			
+			return that;
+		}
+		
+		// Get canvas
+		canvas = document.getElementsByTagName("canvas")[0];
+		canvas.width = 500;
+		canvas.height = 500;
+		
+		// Create sprite sheet
+		coinImage = new Image();	
+		
+		// set sprite
+		flash = sprite({
+			context: canvas.getContext("2d"),
+			width: 8000,
+			height: 500,
+			image: coinImage,
+			numberOfFrames: 16,
+			ticksPerFrame: 4
+		});
+		
+		// Load sprite sheet
+		coinImage.addEventListener("load", init);
+		coinImage.src = "http://skybjf.github.io/img/article/insert/20151016/yvdi.png";
+
+		var stop=document.querySelector(".stop");
+		var goon=document.querySelector(".goon");
+		stop.onclick=function(){cancelloop(); };
+		goon.onclick=function(){loop(); };
+	}());
+</script>
+</body>
+</html>
