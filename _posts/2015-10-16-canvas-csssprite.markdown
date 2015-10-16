@@ -4,7 +4,7 @@ title:      "canvas 动画"
 subtitle:   "结合css sprite制作canvas动画"
 date:       2015-10-16
 author:     "小久哥"
-header-img: "img/article/tpbg/npm.jpg"
+header-img: "img/article/tpbg/canvas.jpg"
 tags:
     - canvas
     - html
@@ -23,10 +23,7 @@ tags:
 ***
 
 ### 例子
-这个是gif图片哦~：
-![img](/img/article/insert/20151016/yvdi.gif)
-
-这个是canvas哦：[测试网页](http://skybjf.github.io/demo/20151016/canvas.html){:target="_blank"}
+[测试网页](http://skybjf.github.io/demo/20151016/canvas.html){:target="_blank"}
 
 ### 解释
 js代码如下：
