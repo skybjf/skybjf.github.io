@@ -8,30 +8,8 @@ header-img: "img/article/tpbg/npm.jpg"
 tags:
     - canvas
     - html
----
 
-> canvas动画，请求一张大图，尽我所能的分析些利弊。基础的canvas画图之类的不做介绍了。
 
-***
-
-### 起因
-
-在和公司的flash姐姐合作的时候，发现，那种重复动作的动画，总是要请求多张图片。处女座病犯了……这样的话会增加请求次数，影响加载速度呀！PS：用flash转canvas简直是神器，分分钟完成一个相当复杂的动画！
-
-> 基础的canvas画图之类的不做介绍了，默认你会canvas画图的方法了(就算你不会，先看完，再决定你要不要学canvas)
-> 默认你知道什么是css sprite(css图片精灵，也有叫 雪碧图 的，可以搜索下)
-
-***
-
-### 例子：
-这个是gif图片哦~：
-![img](/img/article/insert/20151016/yvdi.gif)
-
-这个是canvas哦：
-<canvas width="500" height="500"></canvas>
-<button class="stop">slow</button>
-<button class="goon">quik</button>
-<!-- <script src="./yvdi.js"></script> -->
 <script type="text/javascript">
 	(function() {
 	    var lastTime = 0;
@@ -160,6 +138,31 @@ tags:
 		goon.onclick=function(){loop(); };
 	}());
 </script>
+---
+
+> canvas动画，请求一张大图，尽我所能的分析些利弊。基础的canvas画图之类的不做介绍了。
+
+***
+
+### 起因
+
+在和公司的flash姐姐合作的时候，发现，那种重复动作的动画，总是要请求多张图片。处女座病犯了……这样的话会增加请求次数，影响加载速度呀！PS：用flash转canvas简直是神器，分分钟完成一个相当复杂的动画！
+
+> 基础的canvas画图之类的不做介绍了，默认你会canvas画图的方法了(就算你不会，先看完，再决定你要不要学canvas)
+> 默认你知道什么是css sprite(css图片精灵，也有叫 雪碧图 的，可以搜索下)
+
+***
+
+### 例子：
+这个是gif图片哦~：
+![img](/img/article/insert/20151016/yvdi.gif)
+
+这个是canvas哦：
+<canvas width="500" height="500"></canvas>
+<button class="stop">slow</button>
+<button class="goon">quik</button>
+<!-- <script src="./yvdi.js"></script> -->
+
 
 ### 说明
 js代码如下：
@@ -169,7 +172,7 @@ js代码如下：
 	(function() {
 	    var lastTime = 0;
 	    var vendors = ['ms', 'moz', 'webkit', 'o'];
-	    for(var x = 0; x < vendors.length &amp;&amp; !window.requestAnimationFrame; ++x) {
+	    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
 	        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
 	        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
 	    };
