@@ -156,13 +156,8 @@ tags:
 
 		var stop=document.querySelector(".stop");
 		var goon=document.querySelector(".goon");
-		stop.onclick=function(){
-			cancelloop();
-		};
-		goon.onclick=function(){
-			loop();
-		};
-
+		stop.onclick=function(){cancelloop(); };
+		goon.onclick=function(){loop(); };
 	}());
 </script>
 
@@ -174,7 +169,7 @@ js代码如下：
 	(function() {
 	    var lastTime = 0;
 	    var vendors = ['ms', 'moz', 'webkit', 'o'];
-	    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+	    for(var x = 0; x < vendors.length &amp;&amp; !window.requestAnimationFrame; ++x) {
 	        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
 	        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
 	    };
