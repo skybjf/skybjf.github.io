@@ -29,5 +29,21 @@ tags:
 #### 五、tortoiseSVN
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;比较好用的svn插件，提交：`alt + c`，更新：`alt + u`
 
+#### 六、LiveStyle
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一款快速编写和预览css的插件，支持less和sass。但是要和google的插件 [LiveStyle WebStore page](https://chrome.google.com/webstore/detail/emmet-livestyle/diebikgmpmeppiilkaijjbdgciafajmg){:target="_blank"} 同时启用才有效，浏览器中编辑css也会改变文件的内容。官网说明 [http://livestyle.io/docs/](http://livestyle.io/docs/){:target="_blank"}
+
+#### 七、SFTP
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一款ftp的插件，根据需要安装，需要配置远端服务器使用
+
+#### 八、AngularJS
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;体验下来感觉一般，它是有代码提示的，但是在不写Angular的时候，就会觉得这些提示很多余
+
+#### 九、AntoFileName
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自动提示文件路径，比较好用，只是在有些不该提示路径的时候也会冒出来···倒是可以容忍
+
+#### 十、SublimeCodeIntel
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代码提示，自动补全工具
+
 
 >暂时提供这么多，等有比较好的插件再更新
+>2016年1月4日第一次补充
