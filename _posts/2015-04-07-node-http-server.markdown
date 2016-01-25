@@ -4,7 +4,7 @@ title:      "Node简易http-server"
 subtitle:   "基于node.js搭建本地简易http-server"
 date:       2015-04-07
 author:     "小久哥"
-header-img: "img/article/tpbg/http-server.jpg"
+header-img: "http://7xp21g.com1.z0.glb.clouddn.com/img%2Farticle%2Ftpbg%2Fhttp-server.jpg"
 tags:
     - node
 ---

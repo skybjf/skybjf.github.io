@@ -4,7 +4,7 @@ title:      "canvas 动画"
 subtitle:   "结合css sprite制作canvas动画"
 date:       2015-10-16
 author:     "小久哥"
-header-img: "img/article/tpbg/canvas.jpg"
+header-img: "http://7xp21g.com1.z0.glb.clouddn.com/img%2Farticle%2Ftpbg%2Fcanvas.jpg"
 tags:
     - canvas
     - html
