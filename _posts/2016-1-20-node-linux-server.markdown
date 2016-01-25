@@ -2,7 +2,7 @@
 layout:     post
 title:      "Windows中虚拟机配置linux"
 subtitle:   "node开发环境配置"
-date:       2015-10-16
+date:       2016-1-20
 author:     "小久哥"
 header-img: "http://7xp21g.com1.z0.glb.clouddn.com/img%2Farticle%2Ftpbg%2Fnode1.jpg"
 tags:
