@@ -51,6 +51,3 @@ if(!("num" in window)){
 }
 console.log(num);    //undefined
 ```
-
-
-
