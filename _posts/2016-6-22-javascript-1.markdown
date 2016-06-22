@@ -31,12 +31,12 @@ tags:
 
 ```
 console.log(a);   // undefined
-var a = 1; 
-console.log(a);   // 10
+var a = 1; 			
+console.log(a);   // 1
 add();  // 3
 function add(){
 	var a = 2; 
-	console.log(this.a + a); 
+	console.log(this.a + a); //this指向全局，在浏览器中也就是window，所以这里的this.a == window.a
 }
 add();  // 3
 
