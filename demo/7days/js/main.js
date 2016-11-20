@@ -1,13 +1,3 @@
-/**
- * main.js
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2015, Codrops
- * http://www.codrops.com
- */
 (function() {
 
 	var bodyEl = document.body,
@@ -195,5 +185,24 @@
 	}
 
 	init();
+
+	var $ =function(x){
+		return document.querySelector(x);
+	}; 
+	var bgm = $('#bgm');
+	var btnBgm = $('#btnBgm');
+	var playflag = true;
+	btnBgm.addEventListener('click',function(){
+		if(playflag){
+			this.querySelector('span').innerText = 'BGM-Play';
+			bgm.pause();
+			playflag=false;
+		}else{
+			this.querySelector('span').innerText = 'BGM-Pause';
+			bgm.play();
+			playflag= true;
+		}
+	})
+
 
 })();
