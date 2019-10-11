@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>混合模式</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li,
+    ol {
+        list-style: none;
+    }
+
+    h1 {
+        margin-top: 50px;
+    }
+
+    h2 {
+        margin-top: 40px;
+    }
+
+    h3 {
+        margin-top: 30px;
+    }
+
+    pre {
+        border: 1px solid black;
+        padding: 15px 0;
+        margin: 15px 0;
+    }
+
+    .container {
+        width: 800px;
+        margin: 0 auto;
+        padding-bottom: 150px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>混合模式</h1>
+        <h3>mix-blend-mode的案例</h3>
+        <pre>
+            .mix-container {
+                width: 800px;
+                height: 800px;
+                background: linear-gradient(90deg, white 50%, black 50%);
+                position: relative;
+                border-radius: 50%;
+                border: 1px solid black;
+                animation: rotate 10s linear infinite;
+                box-sizing: border-box;
+            }
+
+            .mix-container::before {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -200px;
+                width: 400px;
+                height: 400px;
+                content: "";
+                border-radius: 50%;
+                background: radial-gradient(circle, white 23%, black calc(23% + 1px));
+                transform-origin: 50% 100%;
+            }
+
+            .mix-container::after {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -200px; 
+                width: 400px;
+                height: 400px;
+                content: "";
+                border-radius: 50%;
+                background: radial-gradient(circle, black 23%, white calc(23% + 1px));
+                transform-origin: 50% 0%;
+            }
+
+            p {
+                position: absolute;
+                mix-blend-mode: difference;
+                line-height: 800px;
+                font-size: 70px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                color: #fff;
+                z-index: 1;
+                animation: rotate2 10s linear infinite;
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(359deg);
+                }
+            }
+
+            @keyframes rotate2 {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(-359deg);
+                }
+            }
+        </pre>
+        <style>
+            .mix-wrap {
+                width: 800px;
+                height: 800px;
+                overflow: hidden;
+            }
+
+            .mix-container {
+                width: 800px;
+                height: 800px;
+                background: linear-gradient(90deg, white 50%, black 50%);
+                position: relative;
+                border-radius: 50%;
+                border: 1px solid black;
+                animation: rotate 10s linear infinite;
+                box-sizing: border-box;
+            }
+
+            .mix-container::before {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -200px;
+                width: 400px;
+                height: 400px;
+                content: "";
+                border-radius: 50%;
+                background: radial-gradient(circle, white 23%, black calc(23% + 1px));
+                transform-origin: 50% 100%;
+            }
+
+            .mix-container::after {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -200px;
+                width: 400px;
+                height: 400px;
+                content: "";
+                border-radius: 50%;
+                background: radial-gradient(circle, black 23%, white calc(23% + 1px));
+                transform-origin: 50% 0%;
+            }
+
+            p {
+                position: absolute;
+                mix-blend-mode: difference;
+                line-height: 800px;
+                font-size: 70px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                color: #fff;
+                z-index: 1;
+                animation: rotate2 10s linear infinite;
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(359deg);
+                }
+            }
+
+            @keyframes rotate2 {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(-359deg);
+                }
+            }
+
+            @keyframes bg {
+                0% {
+                    background: linear-gradient(0deg, white 50%, black 50%);
+                }
+
+                100% {
+                    background: linear-gradient(359deg, white 50%, black 50%);
+                }
+            }
+        </style>
+        <div class="mix-wrap">
+            <div class="mix-container">
+                <p>
+                    测试这几个字的样式
+                </p>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="img"></div>
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"><img src="http://p2.qhimg.com/t0160c558d31f4d5202.png" alt=""></div>
+        </div>
+        <pre>
+        .wrapper {
+            position: relative;
+            border: 1px solid #ddd;
+            margin-right: 5px;
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(#0aa0fe 0%, #baf5ff 55%, #85c1cb 55%);
+            background-size: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            background: url(http://p9.qhimg.com/t012932e87662183569.jpg);
+            background-size: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            mix-blend-mode: multiply;
+        }
+
+        .cloud {
+            position: absolute;
+            background-size: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            mix-blend-mode: lighten;
+        }
+
+        .cloud1 {
+            background-image: url(http://p6.qhimg.com/t0110da9f699fc645b4.png);
+            left: 30px;
+            top: 50px;
+            width: 60px;
+            height: 20px;
+        }
+
+        .cloud2 {
+            background-image: url(http://p0.qhimg.com/t01628bd068d6f37961.png);
+            left: 230px;
+            top: 50px;
+            width: 80px;
+            height: 30px;
+        }
+
+        .cloud3 {
+            left: 130px;
+            top: 25px;
+            width: 100px;
+            height: 30px;
+        }
+        .cloud3 img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        </pre>
+        <style>
+            .wrapper {
+                position: relative;
+                border: 1px solid #ddd;
+                margin: 150px auto 0;
+                width: 300px;
+                height: 200px;
+                background: linear-gradient(#0aa0fe 0%, #baf5ff 55%, #85c1cb 55%);
+                background-size: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                overflow: hidden;
+            }
+
+            .img {
+                width: 100%;
+                height: 100%;
+                background: url(http://p9.qhimg.com/t012932e87662183569.jpg);
+                background-size: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                mix-blend-mode: multiply;
+            }
+
+            .cloud {
+                position: absolute;
+                background-size: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                mix-blend-mode: lighten;
+            }
+
+            .cloud1 {
+                background-image: url(http://p6.qhimg.com/t0110da9f699fc645b4.png);
+                left: 30px;
+                top: 50px;
+                width: 60px;
+                height: 20px;
+            }
+
+            .cloud2 {
+                background-image: url(http://p0.qhimg.com/t01628bd068d6f37961.png);
+                left: 230px;
+                top: 50px;
+                width: 80px;
+                height: 30px;
+            }
+
+            .cloud3 {
+                left: 130px;
+                top: 25px;
+                width: 100px;
+                height: 30px;
+            }
+
+            .cloud3 img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+</body>
+
+</html>

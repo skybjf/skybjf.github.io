@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>loading</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li,
+    ol {
+        list-style: none;
+    }
+
+    h1 {
+        margin-top: 50px;
+    }
+
+    h2 {
+        margin-top: 40px;
+    }
+
+    h3 {
+        margin-top: 30px;
+    }
+
+    pre {
+        border: 1px solid black;
+        padding: 15px 0;
+        margin: 15px 0;
+    }
+
+    .container {
+        width: 800px;
+        margin: 0 auto;
+        padding-bottom: 150px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>loading</h1>
+        <pre>
+        .dot1 {
+            display: inline-block;
+            height: 1em;
+            line-height: 1;
+            vertical-align: text-bottom;
+            overflow: hidden;
+        }
+
+        .dot1::before {
+            display: block;
+            content: '...\A..\A.';
+            white-space: pre-wrap;
+            animation: dot1 3s infinite step-start both;
+        }
+
+        @keyframes dot1 {
+            33% {
+                transform: translateY(-2em);
+            }
+
+            66% {
+                transform: translateY(-1em);
+            }
+        }
+        </pre>
+        <pre>
+            <!-- IE 下不会动 -->
+        .dot2::before {
+            content: '...';
+            position: absolute;
+            animation: dot2 3s infinite step-start both;
+        }
+
+        @keyframes dot2 {
+            33% {
+                content: '.';
+            }
+
+            66% {
+                content: '..';
+            }
+        }
+        </pre>
+        <div class="loading-container">
+            <div>加载中<span class="dot1"></span></div>
+            <div>加载中<span class="dot2"></span></div>
+        </div>
+        <style>
+            .dot1 {
+                display: inline-block;
+                height: 1em;
+                line-height: 1;
+                vertical-align: text-bottom;
+                overflow: hidden;
+            }
+
+            .dot1::before {
+                display: block;
+                content: '...\A..\A.';
+                white-space: pre-wrap;
+                animation: dot1 3s infinite step-start both;
+            }
+
+            @keyframes dot1 {
+                33% {
+                    transform: translateY(-2em);
+                }
+
+                66% {
+                    transform: translateY(-1em);
+                }
+            }
+
+            .dot2::before {
+                content: '...';
+                position: absolute;
+                animation: dot2 3s infinite step-start both;
+            }
+
+            @keyframes dot2 {
+                33% {
+                    content: '.';
+                }
+
+                66% {
+                    content: '..';
+                }
+            }
+        </style>
+    </div>
+</body>
+
+</html>

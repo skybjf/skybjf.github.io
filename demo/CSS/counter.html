@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>计数器</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li,
+    ol {
+        list-style: none;
+    }
+
+    h1 {
+        margin-top: 50px;
+    }
+
+    h2 {
+        margin-top: 40px;
+    }
+
+    h3 {
+        margin-top: 30px;
+    }
+
+    pre {
+        border: 1px solid black;
+        padding: 15px 0;
+        margin: 15px 0;
+    }
+
+    .container {
+        width: 800px;
+        height: 10000px;
+        margin: 0 auto;
+        padding-bottom: 150px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>计数器</h1>
+        <h3>counter 的基本使用(最常用)</h3>
+        <pre>
+        .counter1{
+            counter-reset: count1;
+        }
+        .counter1 li::before {
+            counter-increment: count1;
+            content: counter(count1) ": ";
+        }
+        </pre>
+        <style>
+            .counter1 {
+                counter-reset: count1;
+            }
+
+            .counter1 li::before {
+                counter-increment: count1;
+                content: counter(count1) ": ";
+            }
+        </style>
+        <div class="counter1">
+            <ul>
+                <li>付羽</li>
+                <li>戈伟东</li>
+                <li>马洁莹</li>
+                <li>王欣舒</li>
+                <li>王元</li>
+                <li>张丹丹</li>
+                <li>张振霖</li>
+            </ul>
+        </div>
+
+        <h3>counter 的进阶使用</h3>
+        <pre>
+        .counter2 {
+            counter-reset: count2;
+        }
+
+        .counter2 li::before {
+            counter-increment: count2 2;
+            content: counter(count2) ": ";
+        }
+        </pre>
+        <style>
+            .counter2 {
+                counter-reset: count2;
+            }
+
+            .counter2 li::before {
+                counter-increment: count2 2;
+                content: counter(count2) ": ";
+            }
+        </style>
+        <div class="counter2">
+            <ul>
+                <li>付羽</li>
+                <li>戈伟东</li>
+                <li>马洁莹</li>
+                <li>王欣舒</li>
+                <li>王元</li>
+                <li>张丹丹</li>
+                <li>张振霖</li>
+            </ul>
+        </div>
+
+
+        <pre>
+        .counter3 {
+            counter-reset: count3;
+        }
+
+        .counter3 dl dd {
+            counter-reset: count4;
+        }
+
+        .counter3 dl dt::before {
+            counter-increment: count3;
+            content: "一级目录："counter(count3);
+        }
+
+        .counter3 dl li::before {
+            counter-increment: count4;
+            content: "二级目录："counter(count3) ": "counter(count4, lower-roman);
+        }
+        </pre>
+        <style>
+            .counter3 {
+                counter-reset: count3;
+            }
+
+            .counter3 dl dd {
+                counter-reset: count4;
+            }
+
+            .counter3 dl dt::before {
+                counter-increment: count3;
+                content: "一级目录："counter(count3);
+            }
+
+            .counter3 dl li::before {
+                counter-increment: count4;
+                content: "二级目录："counter(count3) ": "counter(count4, lower-roman);
+            }
+        </style>
+        <div class="counter3">
+            <dl>
+                <dt></dt>
+                <dd>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </dd>
+                <dt></dt>
+                <dd>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+
+        <div>
+            decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, upper-latin, armenian,
+            georgian, lower-alpha, upper-alpha
+        </div>
+
+        <h1>可以延伸css函数 attr()</h1>
+
+</body>
+
+</html>
